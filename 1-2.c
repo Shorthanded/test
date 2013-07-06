@@ -31,9 +31,9 @@ Fahrenheit C1 = -32;
 Fahrenheit C2 = 0;
 Fahrenheit C3 = 100.5;
 /*
-<Type> fn-for-celcius(Celcius f) {
+<Type> fn-for-celcius(Celcius c) {
 	<Type> t;
-	t = ... f;
+	t = ... c;
 	return <Type>;
 }
 */
@@ -51,3 +51,12 @@ Celcius fahrenheit_to_celcius(Fahrenheit f) {
 	c = ( (double)f - 32.0 ) * ( 5.0 / 9.0 );
 	return c;
 }
+
+int main() {
+
+	printf("%f\t%f\n");
+	printf("%f\t%f\n");
+
+	return 0;
+}
+
