@@ -31,6 +31,7 @@ Fahrenheit C1 = -32;
 Fahrenheit C2 = 0;
 Fahrenheit C3 = 100.5;
 /*
+error: expected ‘)’ before ‘<’ token
 <Type> fn-for-celcius(Celcius c) {
 	<Type> t;
 	t = ... c;
@@ -54,8 +55,13 @@ Celcius fahrenheit_to_celcius(Fahrenheit f) {
 
 int main() {
 
-	printf("%f\t%f\n");
-	printf("%f\t%f\n");
+
+
+	assert((fahrenheit_to_celcius(F2) < -17.0) && (fahrenheit_to_celcius(F2) > -18.0));
+	assert(fahrenheit_to_celcius(F3) == ((100.5 - 32.0 ) * ( 5.0 / 9.0 )) );
+
+	printf("%f\t%f\n", F1, fahrenheit_to_celcius(F1));
+	printf("%f\t%f\n", F2, fahrenheit_to_celcius(F2));
 
 	return 0;
 }
