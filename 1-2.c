@@ -13,6 +13,9 @@ typedef double Fahrenheit;
 Fahrenheit F1 = -32;
 Fahrenheit F2 = 0;
 Fahrenheit F3 = 100.5;
+Fahrenheit BEGIN = 0;	// The amount at the beginning of the list
+Fahrenheit END   = 300; // The amount at the end of the list
+Fahrenheit STEP  = 20;  // The step for each output of the list
 /*
 <Type> fn-for-fahrenheit(Fahrenheit f) {
 	<Type> t;
