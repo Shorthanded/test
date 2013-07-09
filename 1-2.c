@@ -21,7 +21,7 @@ Fahrenheit STEP  = 20;  // The step for each output of the list
 <Type> fn-for-fahrenheit(Fahrenheit f) {
 	<Type> t;
 	t = ... f;
-	return <Type>;
+	return t;
 }
 */
 
@@ -39,7 +39,7 @@ Celcius C3 = 100.5;
 <Type> fn-for-celcius(Celcius c) {
 	<Type> t;
 	t = ... c;
-	return <Type>;
+	return t;
 }
 */
 
@@ -57,15 +57,27 @@ Celcius fahrenheit_to_celcius(Fahrenheit f) {
 	return c;
 }
 
+// Celcius -> Fahrenheit
+// take a temperature in Celcius and convert it to Fahrenheit
+Fahrenheit celcius_to_fahrenheit(Celcius c) {
+	Fahrenheit f;
+	f = ((double)c / ( 5.0 / 9.0 )) + 32;
+	return f;
+}
+
 int main() {
-
-
 
 	assert((fahrenheit_to_celcius(F2) < -17.0) && (fahrenheit_to_celcius(F2) > -18.0));
 	assert(fahrenheit_to_celcius(F3) == ((100.5 - 32.0 ) * ( 5.0 / 9.0 )) );
 
 	printf("%5.1f %6.1f\n", F1, fahrenheit_to_celcius(F1));
 	printf("%5.1f %6.1f\n", F2, fahrenheit_to_celcius(F2));
+
+	assert((celcius_to_fahrenheit(C1) < -25.0) && (celcius_to_fahrenheit(C1) > -26.0));
+	assert(celcius_to_fahrenheit(C2) == (0 / ( 5.0 / 9.0 )) + 32);
+
+	printf("%5.1f %6.1f\n", C1, celcius_to_fahrenheit(C1));
+	printf("%5.1f %6.1f\n", C2, celcius_to_fahrenheit(C2));
 
 	return 0;
 }
