@@ -16,6 +16,7 @@ Fahrenheit F3 = 100.5;
 Fahrenheit BEGIN = 0;	// The amount at the beginning of the list
 Fahrenheit END   = 300; // The amount at the end of the list
 Fahrenheit STEP  = 20;  // The step for each output of the list
+
 /*
 <Type> fn-for-fahrenheit(Fahrenheit f) {
 	<Type> t;
@@ -27,14 +28,14 @@ Fahrenheit STEP  = 20;  // The step for each output of the list
 // Template rules used:
 // 	- atomic non-distinct: Natural
 
-// Fahrenheit is Natural
-// interp as the temp in degreees fahrenheit
+// Fahrenheit is Celcius
+// interp as the temp in degreees celcius
 typedef double Celcius;
-Fahrenheit C1 = -32;
-Fahrenheit C2 = 0;
-Fahrenheit C3 = 100.5;
+Celcius C1 = -32;
+Celcius C2 = 0;
+Celcius C3 = 100.5;
+
 /*
-error: expected ‘)’ before ‘<’ token
 <Type> fn-for-celcius(Celcius c) {
 	<Type> t;
 	t = ... c;
@@ -63,8 +64,8 @@ int main() {
 	assert((fahrenheit_to_celcius(F2) < -17.0) && (fahrenheit_to_celcius(F2) > -18.0));
 	assert(fahrenheit_to_celcius(F3) == ((100.5 - 32.0 ) * ( 5.0 / 9.0 )) );
 
-	printf("%f\t%f\n", F1, fahrenheit_to_celcius(F1));
-	printf("%f\t%f\n", F2, fahrenheit_to_celcius(F2));
+	printf("%5.1f %6.1f\n", F1, fahrenheit_to_celcius(F1));
+	printf("%5.1f %6.1f\n", F2, fahrenheit_to_celcius(F2));
 
 	return 0;
 }
