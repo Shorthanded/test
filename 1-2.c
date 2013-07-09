@@ -13,9 +13,9 @@ typedef double Fahrenheit;
 const Fahrenheit F1 = -32;
 const Fahrenheit F2 = 0;
 const Fahrenheit F3 = 100.5;
-const Fahrenheit BEGIN = 0;	// The amount at the beginning of the list
-const Fahrenheit END   = 300; // The amount at the end of the list
-const Fahrenheit STEP  = 20;  // The step for each output of the list
+const Fahrenheit LOW  = 0;	// The amount at the beginning of the list
+const Fahrenheit HIGH = 300;	// The amount at the end of the list
+const Fahrenheit STEP = 20;	// The step for each output of the list
 
 /*
 <Type> fn-for-fahrenheit(Fahrenheit f) {
@@ -53,7 +53,7 @@ const Celcius C3 = 100.5;
 // take a temperature in Fahrenheit and convert it to Celcius
 Celcius fahrenheit_to_celcius(Fahrenheit f) {
 	Celcius c;
-	c = ( (double)f - 32.0 ) * ( 5.0 / 9.0 );
+	c = ( f - 32.0 ) * ( 5.0 / 9.0 );
 	return c;
 }
 
@@ -61,7 +61,7 @@ Celcius fahrenheit_to_celcius(Fahrenheit f) {
 // take a temperature in Celcius and convert it to Fahrenheit
 Fahrenheit celcius_to_fahrenheit(Celcius c) {
 	Fahrenheit f;
-	f = ( (double)c / ( 5.0 / 9.0 )) + 32;
+	f = ( c / ( 5.0 / 9.0 )) + 32;
 	return f;
 }
 
