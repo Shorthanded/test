@@ -65,20 +65,55 @@ Fahrenheit celcius_to_fahrenheit(Celcius c) {
 	return f;
 }
 
+// Fahrenheit -> Fahrenheit
+//
+void print_list() {
+	Fahrenheit f = LOW;						// Fahrenheit -> Fahrenheit
+	while(f <= HIGH) {
+		printf("%5.1f %6.1f\n", f, fahrenheit_to_celcius(f));	// Fahrenheit -> String
+		f += STEP;						// Fahrenheit -> Fahrenheit
+	}
+}
+
 int main() {
 
 	assert((fahrenheit_to_celcius(F2) < -17.0) && (fahrenheit_to_celcius(F2) > -18.0));
 	assert(fahrenheit_to_celcius(F3) == ((100.5 - 32.0 ) * ( 5.0 / 9.0 )) );
 
-	printf("%5.1f %6.1f\n", F1, fahrenheit_to_celcius(F1));
-	printf("%5.1f %6.1f\n", F2, fahrenheit_to_celcius(F2));
+	// printf("%5.1f %6.1f\n", F1, fahrenheit_to_celcius(F1));
+	// printf("%5.1f %6.1f\n", F2, fahrenheit_to_celcius(F2));
 
 	assert((celcius_to_fahrenheit(C1) < -25.0) && (celcius_to_fahrenheit(C1) > -26.0));
 	assert(celcius_to_fahrenheit(C2) == (0 / ( 5.0 / 9.0 )) + 32);
 
-	printf("%5.1f %6.1f\n", C1, celcius_to_fahrenheit(C1));
-	printf("%5.1f %6.1f\n", C2, celcius_to_fahrenheit(C2));
+	// printf("%5.1f %6.1f\n", C1, celcius_to_fahrenheit(C1));
+	// printf("%5.1f %6.1f\n", C2, celcius_to_fahrenheit(C2));
+
+	print_list();
 
 	return 0;
 }
 
+/*
+// WS -> WS
+// start the world with ...
+
+(define (main ws)
+  (big-bang ws                   ; WS
+            (on-tick   tock)     ; WS -> WS
+            (to-draw   render)   ; WS -> Image
+            (stop-when ...)      ; WS -> Boolean
+            (on-mouse  ...)      ; WS Integer Integer MouseEvent -> WS
+            (on-key    ...)))    ; WS KeyEvent -> WS
+
+// WS -> WS
+// produce the next ...
+// !!!
+(define (tock ws) ...)
+
+
+;; WS -> Image
+;; render ... 
+;; !!!
+(define (render ws) ...)
+*/
