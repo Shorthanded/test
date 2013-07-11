@@ -7,16 +7,23 @@
 
 #include <stdio.h>
 
-/*	count characters in input, first version	*/
+/*	count characters in input, third version	*/
+
+
+// ISTREAM(Char) -> Number		
+// Take some input and give the number of characters
+double countNumber() {
+	double nc;
+	for ( nc = 0; getchar() != EOF; ++nc)
+		;
+
+	return nc;
+}
 
 int main() {
 
-	long nc = 0;
-
-	while (	getchar() != EOF) {
-		nc++;
-		printf("%ld\n", nc);
-	}
+	double nc = countNumber();
+	printf("\nNumber of chars in the input stream: %.0f\n", nc);
 
 	return 0;
 }
