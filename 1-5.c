@@ -7,13 +7,15 @@
 
 #include <stdio.h>
 
-/*	copy input to output - 2nd version	*/
+/*	count characters in input, first version	*/
 
 int main() {
-	int c;
 
-	while (	c = getchar() != EOF) {
-		putchar( c );
+	long nc = 0;
+
+	while (	getchar() != EOF) {
+		nc++;
+		printf("%ld\n", nc);
 	}
 
 	return 0;
