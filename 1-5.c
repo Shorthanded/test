@@ -10,7 +10,15 @@
 /*	count characters in input, third version	*/
 
 
-// ISTREAM(Char) -> Number		
+/*
+<Type> fn-for-ISTREAM<char>() {
+	<Type> t;
+	t = ... while( getchar() != EOF) {...};		// While stream input is not delimiter
+	return t;
+}
+*/
+
+// ISTREAM<Char> -> Number		
 // Take some input and give the number of characters
 double countNumber() {
 	double nc;
